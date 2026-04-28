@@ -1,10 +1,11 @@
+import br.com.alura.screenmatch.calculos.calculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 public class Principal {
     public static void main(String[] args) {
-        Titulo meuFilme = new Titulo(); // OBJETO CRIADO NA MEMÓRIA ATRAVÉS DA CLASSE FILME
+        Filme meuFilme = new Filme(); // OBJETO CRIADO NA MEMÓRIA ATRAVÉS DA CLASSE FILME
         meuFilme.setNome(" O poderoso chefão "); //Quando eu altero para set, o nome do filme fica dentro dos (), ai não preciso usar mais o =
         meuFilme.setAnoDeLancamento( 1970);
         meuFilme.setDuracaoEmMinutos(180);
@@ -23,5 +24,16 @@ public class Principal {
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração da Série: " + lost.getDuracaoEmMinutos());
+
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoDeLancamento( 2023);
+        outroFilme.setDuracaoEmMinutos(200);
+
+        calculadoraDeTempo calculadora = new calculadoraDeTempo();
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(lost);
+        System.out.println(calculadora.getTempoTotal());
     }
 }
