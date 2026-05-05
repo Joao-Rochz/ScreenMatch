@@ -16,6 +16,10 @@ public class Titulo {
         return totalDeAvaliacao;  // TotalDeAvaliacao agora está como private, e se chama agora getTotalDeAvaliacao
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }

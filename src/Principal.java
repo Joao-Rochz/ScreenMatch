@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme(); // OBJETO CRIADO NA MEMÓRIA ATRAVÉS DA CLASSE FILME
@@ -46,5 +48,18 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVizualizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDoJota = new  Filme(); //VAR: a variavel var realiza uma inferência do tipo declarado
+        filmeDoJota.setNome("Dogville");
+        filmeDoJota.setDuracaoEmMinutos(200);
+        filmeDoJota.setAnoDeLancamento(2003);
+        filmeDoJota.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoJota);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista " + listaDeFilmes.size());
+        System.out.println("Primeiro filme " + listaDeFilmes.get(0).getNome());
     }
 }
